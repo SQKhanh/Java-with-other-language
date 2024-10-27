@@ -27,8 +27,9 @@ public class Check {
         }
     }
 
-    public static void greet(String data) {
+    public static String greet(String data) {
         System.out.println("Mã đã được gọi nè: " + data);
+        return " Địt nhau auaua ???";
     }
 
     private static final String PATH = "data/js/"; // Đường dẫn tới thư mục chứa file JavaScript
