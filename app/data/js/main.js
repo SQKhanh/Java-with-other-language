@@ -1,7 +1,7 @@
 // data/js/main.js
 
 // Yêu cầu các hàm từ util.js
-const { hello, getName } = require('./src/util.js'); // Đường dẫn tới tệp util.js
+const {hello, getName} = require('./src/util.js'); // Đường dẫn tới tệp util.js
 
 // Gọi hàm hello từ util.js
 hello(); // Gọi hàm hello đã được định nghĩa trong util.js
@@ -36,24 +36,13 @@ listJavaClasses();
 
 // Tạo một hàm để gọi phương thức greet của Java
 function callJavaGreet() {
-    // Kiểm tra xem Polyglot có khả dụng không
-    if (typeof Polyglot !== 'undefined') {
-        const Check = Polyglot.import('js.Check'); // Lấy lớp Check từ Java
-        if (!Check) {
-            console.log("Lớp Check không tìm thấy");
-            return;
-        }
-        if (!Check.greet) {
-            console.log("Hàm greet không tìm thấy");
-            return;
-        }
-        if (Check && Check.greet) { // Kiểm tra Check và greet có tồn tại không
-            Check.greet("Xin chào từ JavaScript!"); // Gọi hàm greet của Java
-        } else {
-            console.log("Lớp Check hoặc hàm greet không tìm thấy.");
-        }
-    } else {
-        console.log("Polyglot không được định nghĩa");
+    try {
+        const systemClass = Java.type('js.Check'); // Lấy lớp System
+        console.log("js.Check class is available.");
+        // Bạn có thể thử gọi một phương thức tĩnh từ lớp System
+        console.log("Current Time: " + systemClass.greet("Địt con mẹ mày"));
+    } catch (error) {
+        console.log("Java System class is not available: ", error.message);
     }
 }
 
