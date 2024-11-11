@@ -1,6 +1,7 @@
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;
+import model.Human;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,9 +13,14 @@ import com.sun.jna.Native;
  */
 public interface MyLib extends Library {
 
-    public static final MyLib INSTANCE = Native.load("example.dll", MyLib.class); // Tải thư viện C
+    public static final MyLib INSTANCE = Native.load("bin/example.dll", MyLib.class); // Tải thư viện C
 
-    // Khai báo hàm printf mà bạn muốn gọi
     public void helloWorld();
 
+    /**
+     * Lưu ý: Object truyền vào phải cùng kiểu dữ liệu với object bên mã C++
+     *
+     * @param human
+     */
+    public void handleHuman(Human human);
 }

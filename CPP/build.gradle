@@ -23,6 +23,9 @@ dependencies {
 
     // This dependency is used by the application.
     implementation libs.guava
+
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
     
     // https://mvnrepository.com/artifact/net.java.dev.jna/jna
     implementation 'net.java.dev.jna:jna:5.15.0'

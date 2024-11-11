@@ -1,5 +1,6 @@
 #include <windows.h>
 #include <iostream>
+#include "src/model/car.h"
 
 // Khai báo hàm từ DLL
 typedef void (*HelloWorldFunc)();
@@ -28,5 +29,12 @@ int main()
     {
         std::cerr << "Không thể tải DLL!" << std::endl;
     }
+
+    // Tạo đối tượng car từ lớp Car
+    Car myCar("Toyota", "Camry", 2022);
+
+    // Gọi phương thức displayInfo để in thông tin xe
+    myCar.displayInfo();
+
     return 0;
 }

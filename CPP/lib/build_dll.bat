@@ -1,0 +1,1 @@
+g++ -shared example.cpp -o bin/example.dll
