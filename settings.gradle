@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = 'Java-with-other-language'
-include('JS','Lua','CPP')
+include('JS','Lua','Cpp','Python')
